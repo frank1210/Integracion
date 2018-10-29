@@ -2,14 +2,14 @@ package bean;
 
 public class Factura {
 	
-	private int nuemero;
+	private int numero;
 	private int id_socio;
 	
-	public int getNuemero() {
-		return nuemero;
+	public int getNumero() {
+		return numero;
 	}
-	public void setNuemero(int nuemero) {
-		this.nuemero = nuemero;
+	public void setNumero(int numero) {
+		this.numero = numero;
 	}
 	public int getId_socio() {
 		return id_socio;
