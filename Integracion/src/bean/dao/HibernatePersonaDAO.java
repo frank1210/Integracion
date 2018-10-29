@@ -23,7 +23,7 @@ public class HibernatePersonaDAO {
 		return instancia;
 	}
 	
-	public void grabarProductos(List<Persona> Personas){
+	public void grabarPersonas(List<Persona> Personas){
 		Session session = sf.openSession();
 		session.beginTransaction();
 		for(Persona p:Personas)

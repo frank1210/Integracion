@@ -11,19 +11,19 @@ public class PersonaSRV {
 		dao = HibernatePersonaDAO.getInstancia();
 	}
 	
-	public void grabarProductos(List<Persona> productos){
-		dao.grabarProductos(productos);
+	public void grabarPersonas(List<Persona> Personas){
+		dao.grabarPersonas(Personas);
 	}
 	
-	public void borrarProducto(Persona p){
+	public void borrarPersona(Persona p){
 		dao.borrarPersona(p);
 	}
 	
-	public Persona seleccionarProducto(String c){
+	public Persona seleccionarPersona(String c){
 		return dao.seleccionarPersona(c);
 	}
 	
-	public void modificarProducto(Persona p){
+	public void modificarPersona(Persona p){
 		dao.modificarPersonas(p);
 		
 	}
