@@ -21,6 +21,14 @@ public class Empleado extends Persona{
 	public void setSueldoBasico(int sueldoBasico) {
 		SueldoBasico = sueldoBasico;
 	}
+
+	public int getNroEmpleado() {
+		return NroEmpleado;
+	}
+
+	public void setNroEmpleado(int nroEmpleado) {
+		NroEmpleado = nroEmpleado;
+	}
 	
 	
 }

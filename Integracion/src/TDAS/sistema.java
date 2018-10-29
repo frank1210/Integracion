@@ -26,12 +26,16 @@ public class sistema {
 		*/
 		
 		ListPersonas personas = new ListPersonas();
-		Persona p1 = new Profesor();
+		Profesor p1 = new Profesor();
 		p1.setApellido("Lopez");
-		p1.setNombre("Franco");
+		p1.setNombre("asd");
 		p1.setDni("37068765");
 		p1.setDomicilio("MT1807");
 		p1.setMail("asd@asd.c");
+		p1.setSueldoBasico(2000);
+		p1.setNroEmpleado(1);
+		p1.setPrecioHs(100);
+		p1.setHoras(10);
 		personas.addPersona(p1);
 		grabarPersonas(personas);
 		
