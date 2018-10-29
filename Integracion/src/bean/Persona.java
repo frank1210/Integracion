@@ -1,10 +1,27 @@
 package bean;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Inheritance;
+import javax.persistence.InheritanceType;
+import javax.persistence.Table;
+
+@Entity
+@Table(name="Persona")
+@Inheritance(strategy = InheritanceType.JOINED)
+
 public class Persona {
+	@Column (name = "Nombre", nullable = false, length = 20)
 	private String Nombre;
+	@Id
+	@Column (name = "Dni", nullable = false, length = 14)
 	private String Dni;
+	@Column (name = "mail", nullable = false, length = 25)
 	private String mail;
+	@Column (name = "Apellido", nullable = false, length = 20)
 	private String Apellido;
+	@Column (name = "Domicilio", nullable = false, length = 50)
 	private String Domicilio;
 	
 	public String getNombre() {
