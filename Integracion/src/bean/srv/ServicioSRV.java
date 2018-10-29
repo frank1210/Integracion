@@ -2,6 +2,7 @@ package bean.srv;
 
 import java.util.List;
 
+import bean.ListServicios;
 import bean.Producto;
 import bean.Servicio;
 import bean.dao.HibernateServicioDAO;
@@ -12,7 +13,7 @@ public class ServicioSRV {
 		dao = HibernateServicioDAO.getInstancia();
 	}
 	
-	public void grabarServicios(List<Servicio> servicios){
+	public void grabarServicios(ListServicios servicios){
 		dao.grabarServicios(servicios);
 	}
 	

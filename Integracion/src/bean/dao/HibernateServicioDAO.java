@@ -6,6 +6,7 @@ import hbt.HibernateUtil;
 
 import org.hibernate.*;
 
+import bean.ListServicios;
 import bean.Servicio;
 
 public class HibernateServicioDAO {
@@ -21,10 +22,10 @@ public class HibernateServicioDAO {
 		return instancia;
 	}
 
-	public void grabarServicios(List<Servicio> servicios){
+	public void grabarServicios(ListServicios servicios){
 		Session session = sf.openSession();
 		session.beginTransaction();
-		for(Servicio s:servicios)
+		for(Servicio s:servicios.getServicios())
 			session.merge(s);
 		session.flush();
 		session.getTransaction().commit();

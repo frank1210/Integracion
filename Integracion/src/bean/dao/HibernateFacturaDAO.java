@@ -8,6 +8,7 @@ import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 
 import bean.Factura;
+import bean.ListFacturas;
 import bean.Persona;
 
 public class HibernateFacturaDAO {
@@ -23,10 +24,10 @@ public class HibernateFacturaDAO {
 		return instancia;
 	}
 	
-	public void grabarFacturas(List<Factura> Facturas){
+	public void grabarFacturas(ListFacturas facturas){
 		Session session = sf.openSession();
 		session.beginTransaction();
-		for(Factura f:Facturas)
+		for(Factura f:facturas.getFacturas())
 			session.merge(f);
 		session.flush();
 		session.getTransaction().commit();

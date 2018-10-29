@@ -2,6 +2,7 @@ package bean.srv;
 
 import java.util.List;
 
+import bean.ListPersonas;
 import bean.Persona;
 import bean.dao.HibernatePersonaDAO;
 
@@ -11,7 +12,7 @@ public class PersonaSRV {
 		dao = HibernatePersonaDAO.getInstancia();
 	}
 	
-	public void grabarPersonas(List<Persona> Personas){
+	public void grabarPersonas(ListPersonas Personas){
 		dao.grabarPersonas(Personas);
 	}
 	

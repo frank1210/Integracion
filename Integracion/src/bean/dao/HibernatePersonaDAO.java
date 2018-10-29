@@ -7,6 +7,7 @@ import hbt.HibernateUtil;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 
+import bean.ListPersonas;
 import bean.Persona;
 
 
@@ -23,10 +24,10 @@ public class HibernatePersonaDAO {
 		return instancia;
 	}
 	
-	public void grabarPersonas(List<Persona> Personas){
+	public void grabarPersonas(ListPersonas personas){
 		Session session = sf.openSession();
 		session.beginTransaction();
-		for(Persona p:Personas)
+		for(Persona p:personas.getPersonas())
 			session.merge(p);
 		session.flush();
 		session.getTransaction().commit();

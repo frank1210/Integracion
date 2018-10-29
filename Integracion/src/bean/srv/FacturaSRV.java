@@ -3,6 +3,7 @@ package bean.srv;
 import java.util.List;
 
 import bean.Factura;
+import bean.ListFacturas;
 import bean.dao.HibernateFacturaDAO;
 
 public class FacturaSRV {
@@ -12,7 +13,7 @@ public class FacturaSRV {
 		dao = HibernateFacturaDAO.getInstancia();
 	}
 	
-	public void grabarFacturas(List<Factura> Facturas){
+	public void grabarFacturas(ListFacturas Facturas){
 		dao.grabarFacturas(Facturas);
 	}
 	

@@ -24,7 +24,7 @@ public class sistema {
 		
 	}
 	
-	public static void grabarAbonos(ListAbonos list)throws RemoteException{
+	public static void grabarAbonos(ListAbonos list) throws RemoteException{
 		new AbonoSRV().grabarAbonos(list);
 	}
 

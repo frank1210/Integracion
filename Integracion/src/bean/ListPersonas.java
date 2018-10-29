@@ -6,7 +6,7 @@ import java.util.List;
 public class ListPersonas {
 	private List<Persona> Personas =new ArrayList<Persona>();
 	
-	public List<Persona> getProductos() {
+	public List<Persona> getPersonas() {
 		return Personas;
 	}
 
