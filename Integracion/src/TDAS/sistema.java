@@ -5,11 +5,12 @@ import java.util.List;
 
 import bean.Abono;
 import bean.ListAbonos;
+
 import bean.srv.*;
 
 public class sistema {
 
-	public static void main(String[] args) {
+	public static void main(String[] args) throws RemoteException {
 		// TODO Auto-generated method stub
 
 		ListAbonos abonos = new ListAbonos();
@@ -23,7 +24,7 @@ public class sistema {
 		
 	}
 	
-	public void grabarAbonos(ListAbonos list)throws RemoteException{
+	public static void grabarAbonos(ListAbonos list)throws RemoteException{
 		new AbonoSRV().grabarAbonos(list);
 	}
 
