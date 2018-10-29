@@ -55,7 +55,7 @@ public class HibernatePersonaDAO {
 		session.close();
 	}
 	
-	public void modificarPersonaos(Persona p){
+	public void modificarPersonas(Persona p){
 		Session session = sf.openSession();
 		session.beginTransaction();
 		session.update(p);
