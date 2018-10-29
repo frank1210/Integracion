@@ -4,6 +4,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class ListFacturas {
-	s
+	private List<Factura> facturas =new ArrayList<Factura>();
 
 }
