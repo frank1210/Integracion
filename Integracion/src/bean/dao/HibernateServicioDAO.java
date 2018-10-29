@@ -13,7 +13,7 @@ public class HibernateServicioDAO {
 	public static HibernateServicioDAO getInstancia(){
 		if(instancia == null){
 			sf = HibernateUtil.getSessionFactory();
-			instancia = new HibernateProductoDAO();
+			instancia = new HibernateServicioDAO();
 		} 
 		return instancia;
 	}
