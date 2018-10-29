@@ -9,7 +9,7 @@ import javax.persistence.Table;
 @Entity
 @Inheritance(strategy = InheritanceType.JOINED)
 @Table(name="Empleado")
-public class Empleado {
+public class Empleado extends Persona{
 	//@Id
 	private int NroEmpleado;
 	private int SueldoBasico;

@@ -7,7 +7,7 @@ import javax.persistence.Table;
 
 @Entity
 @Table(name="Profesor")
-public class Profesor {
+public class Profesor extends Empleado{
 	private int PrecioHs;
 	private int Horas;
 	public int getPrecioHs() {
