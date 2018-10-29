@@ -11,7 +11,8 @@ import javax.persistence.Table;
 @Entity
 @Table(name="Servicios")
 
-public class Servicio {
+public class Servicio implements Serializable{
+	private static final long serialVersionUID = 1L;
 	@Id
 	private int id;
 	private String nombre;

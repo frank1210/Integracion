@@ -23,12 +23,13 @@ public class HibernateUtil
         	Configuration config =new Configuration();
         	config.addAnnotatedClass(Abono.class);
         	config.addAnnotatedClass(Factura.class);
+        	config.addAnnotatedClass(Servicio.class);
         	config.addAnnotatedClass(Persona.class);
         	config.addAnnotatedClass(Socio.class);
         	config.addAnnotatedClass(Profesor.class);
         	config.addAnnotatedClass(Administrativo.class);
         	config.addAnnotatedClass(Empleado.class);
-        	config.addAnnotatedClass(Servicio.class);
+        	//config.addAnnotatedClass(Servicio.class);
         	
         	
         	sessionFactory = config.buildSessionFactory();

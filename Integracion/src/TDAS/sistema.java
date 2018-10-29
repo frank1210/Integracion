@@ -25,7 +25,7 @@ public class sistema {
 		grabarAbonos(abonos);
 		*/
 		
-		ListPersonas personas = new ListPersonas();
+		/*ListPersonas personas = new ListPersonas();
 		Profesor p1 = new Profesor();
 		p1.setApellido("Lopez");
 		p1.setNombre("asd");
@@ -37,8 +37,18 @@ public class sistema {
 		p1.setPrecioHs(100);
 		p1.setHoras(10);
 		personas.addPersona(p1);
-		grabarPersonas(personas);
+		grabarPersonas(personas);*/
+		ListAbonos abonos = new ListAbonos();
+		Abono a = new Abono();
+		a.setDias(7);
+		a.setNombre("semanal");
+		a.setId(1);
+		a.setDescuento(10);
+		abonos.addAbono(a);
 		
+		grabarAbonos(abonos);
+		
+	
 	}
 	
 	public static void grabarAbonos(ListAbonos list) throws RemoteException{
@@ -47,5 +57,5 @@ public class sistema {
 	public static void grabarPersonas(ListPersonas list) throws RemoteException{
 		new PersonaSRV().grabarPersonas(list);
 	}
-
+	
 }
