@@ -3,6 +3,7 @@ package bean.srv;
 import java.util.List;
 
 import bean.Abono;
+import bean.ListAbonos;
 import bean.dao.HibernateAbonoDAO;
 import bean.dao.HibernatePersonaDAO;
 
@@ -12,7 +13,7 @@ public class AbonoSRV {
 		dao = HibernateAbonoDAO.getInstancia();
 	}
 	
-	public void grabarAbonos(List<Abono> Abonos){
+	public void grabarAbonos(ListAbonos Abonos){
 		dao.grabarAbonos(Abonos);
 	}
 	

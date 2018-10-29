@@ -9,6 +9,7 @@ import org.hibernate.SessionFactory;
 
 import bean.Abono;
 import bean.Factura;
+import bean.ListAbonos;
 
 public class HibernateAbonoDAO {
 
@@ -23,10 +24,10 @@ public class HibernateAbonoDAO {
 		return instancia;
 	}
 	
-	public void grabarAbonos(List<Abono> Abonos){
+	public void grabarAbonos(ListAbonos Abonos){
 		Session session = sf.openSession();
 		session.beginTransaction();
-		for(Abono f:Abonos)
+		for(Abono f:Abonos.getAbonos())
 			session.merge(f);
 		session.flush();
 		session.getTransaction().commit();

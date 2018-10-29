@@ -1,9 +1,10 @@
 package bean;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
-public class ListAbonos {
+public class ListAbonos implements Serializable{
 	private static final long serialVersionUID = 1L;
 	private List<Abono> abonos =new ArrayList<Abono>();
 	
