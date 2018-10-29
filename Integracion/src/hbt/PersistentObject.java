@@ -1,0 +1,55 @@
+package hbt;
+
+import java.io.Serializable;
+
+import javax.persistence.*;
+
+@MappedSuperclass
+public class PersistentObject implements Serializable{
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+	
+	@Id
+	@GeneratedValue( strategy = GenerationType.AUTO)
+	protected Integer id;
+	
+	//@Version
+	@Transient
+	private int version;
+
+	public Integer getId() {
+		return id;
+	}
+
+	public void setId(Integer id) {
+		this.id = id;
+	}
+
+	public int getVersion() {
+		return version;
+	}
+
+	public void setVersion(int version) {
+		this.version = version;
+	}
+
+	@Override
+	public int hashCode() {
+		final int prime = 31;
+		int result = 1;
+		result = prime * result + ((id == null) ? 0 : id.hashCode());
+		return result;
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj) return true;	
+		if ((obj == null) || (!(obj instanceof PersistentObject))) {
+			return false;
+		}
+		PersistentObject other = (PersistentObject) obj;
+		return (id!=null && other.id != null ? (id.equals(other.id)) : false);
+	}
+}
