@@ -10,7 +10,7 @@ import javax.persistence.Table;
 @MappedSuperclass
 @Inheritance(strategy = InheritanceType.JOINED)
 @Table(name="Empleado")
-public class Empleado extends Persona{
+public abstract class Empleado extends Persona{
 	//@Id
 	private int NroEmpleado;
 	private int SueldoBasico;
@@ -30,6 +30,6 @@ public class Empleado extends Persona{
 	public void setNroEmpleado(int nroEmpleado) {
 		NroEmpleado = nroEmpleado;
 	}
-	
+	public abstract float liquidarsueldo();
 	
 }

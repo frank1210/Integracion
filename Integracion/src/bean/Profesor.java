@@ -22,6 +22,11 @@ public class Profesor extends Empleado{
 	public void setHoras(int horas) {
 		Horas = horas;
 	}
+	@Override
+	public float liquidarsueldo() {
+		// TODO Auto-generated method stub
+		return this.getSueldoBasico() + (this.getHoras()*this.getPrecioHs());
+	}
 	
 
 }

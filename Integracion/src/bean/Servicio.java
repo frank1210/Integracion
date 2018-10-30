@@ -27,7 +27,14 @@ public class Servicio implements Serializable{
 	private int id;
 	private String nombre;
 	private String descripcion;
+	private double costo;
 	
+	public double getCosto() {
+		return costo;
+	}
+	public void setCosto(double costo) {
+		this.costo = costo;
+	}
 	public int getId() {
 		return id;
 	}

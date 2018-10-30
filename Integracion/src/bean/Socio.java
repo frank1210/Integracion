@@ -9,6 +9,7 @@ import bean.Servicio;
 import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
+import javax.persistence.ForeignKey;
 import javax.persistence.Id;
 import javax.persistence.Inheritance;
 import javax.persistence.InheritanceType;
@@ -33,7 +34,7 @@ public class Socio extends Persona implements Serializable{
 	@ManyToOne
 	@PrimaryKeyJoinColumn
 	private Abono abono;
-
+	
 	public List<Servicio> getServicios() {
 		return servicios;
 	}

@@ -17,5 +17,11 @@ public class Administrativo extends Empleado{
 	public void setPresentismo(int presentismo) {
 		Presentismo = presentismo;
 	}
+
+	@Override
+	public float liquidarsueldo() {
+		// TODO Auto-generated method stub
+		return this.getSueldoBasico() + this.getPresentismo();
+	}
 	
 }
