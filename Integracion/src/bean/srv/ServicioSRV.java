@@ -12,7 +12,7 @@ public class ServicioSRV {
 		dao = HibernateServicioDAO.getInstancia();
 	}
 	
-	public void grabarServicios(ListServicios servicios){
+	public void grabarServicios(List<Servicio> servicios){
 		dao.grabarServicios(servicios);
 	}
 	

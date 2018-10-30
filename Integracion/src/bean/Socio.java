@@ -2,6 +2,7 @@ package bean;
 
 import java.io.Serializable;
 import java.util.ArrayList;
+import java.util.List;
 
 import bean.Servicio;
 
@@ -11,10 +12,13 @@ import javax.persistence.FetchType;
 import javax.persistence.Id;
 import javax.persistence.Inheritance;
 import javax.persistence.InheritanceType;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
 //import javax.persistence.ManyToMany;
 import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
+import javax.persistence.PrimaryKeyJoinColumn;
 import javax.persistence.Table;
 
 @Entity
@@ -23,23 +27,25 @@ import javax.persistence.Table;
 public class Socio extends Persona implements Serializable{
 	private static final long serialVersionUID = 1L;
 	//@OneToMany (cascade=CascadeType.ALL, fetch= FetchType.EAGER)
-	private ArrayList<Servicio> servicios = new ArrayList();
-
+	@OneToMany (cascade=CascadeType.ALL, fetch= FetchType.EAGER)
+	//@JoinColumn(name="Codigo")
+	private List<Servicio> servicios = new ArrayList<Servicio>();
 	@ManyToOne
-	private Abono abonos;
-	
-	public ArrayList<Servicio> getServicios() {
+	@PrimaryKeyJoinColumn
+	private Abono abono;
+
+	public List<Servicio> getServicios() {
 		return servicios;
 	}
-	public void setServicios(ArrayList<Servicio> servicios) {
+	public void setServicios(List<Servicio> servicios) {
 		this.servicios = servicios;
 	}
 	
-	public Abono getId_abono() {
-		return abonos;
+	public Abono getAbono() {
+		return abono;
 	}
-	public void setId_abono(int id_abono) {
-		this.abonos = abonos;
+	public void setAbono(Abono abono) {
+		this.abono = abono;
 	}
 
 	

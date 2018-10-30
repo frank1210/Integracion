@@ -24,11 +24,11 @@ public class HibernateAbonoDAO {
 		return instancia;
 	}
 	
-	public void grabarAbonos(ListAbonos Abonos){
+	public void grabarAbonos(Abono Abonos){
 		Session session = sf.openSession();
 		session.beginTransaction();
-		for(Abono f:Abonos.getAbonos())
-			session.merge(f);
+		//for(Abono f:Abonos)
+			session.merge(Abonos);
 		session.flush();
 		session.getTransaction().commit();
 		session.close();

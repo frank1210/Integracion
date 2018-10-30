@@ -13,7 +13,7 @@ public class AbonoSRV {
 		dao = HibernateAbonoDAO.getInstancia();
 	}
 	
-	public void grabarAbonos(ListAbonos Abonos){
+	public void grabarAbonos(Abono Abonos){
 		dao.grabarAbonos(Abonos);
 	}
 	

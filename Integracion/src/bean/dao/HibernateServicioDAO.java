@@ -22,10 +22,10 @@ public class HibernateServicioDAO {
 		return instancia;
 	}
 
-	public void grabarServicios(ListServicios servicios){
+	public void grabarServicios(List<Servicio> servicios){
 		Session session = sf.openSession();
 		session.beginTransaction();
-		for(Servicio s:servicios.getServicios())
+		for(Servicio s:servicios)
 			session.merge(s);
 		session.flush();
 		session.getTransaction().commit();

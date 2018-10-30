@@ -5,9 +5,10 @@ import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Inheritance;
 import javax.persistence.InheritanceType;
+import javax.persistence.MappedSuperclass;
 import javax.persistence.Table;
 
-@Entity
+@MappedSuperclass
 @Table(name="Persona")
 @Inheritance(strategy = InheritanceType.JOINED)
 

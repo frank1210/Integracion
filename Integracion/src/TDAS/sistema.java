@@ -1,13 +1,18 @@
 package TDAS;
 
 import java.rmi.RemoteException;
+import java.util.ArrayList;
 import java.util.List;
 
 import bean.Abono;
+import bean.Administrativo;
 import bean.ListAbonos;
 import bean.ListPersonas;
+import bean.ListServicios;
 import bean.Persona;
 import bean.Profesor;
+import bean.Servicio;
+import bean.Socio;
 import bean.srv.*;
 
 public class sistema {
@@ -25,20 +30,63 @@ public class sistema {
 		grabarAbonos(abonos);
 		*/
 		
-		/*ListPersonas personas = new ListPersonas();
-		Profesor p1 = new Profesor();
+		ListPersonas personas = new ListPersonas();
+		List<Servicio> servicios = new ArrayList<Servicio>();
+		
+		/*Profesor p1 = new Profesor();*/
+		Servicio s1 = new Servicio();
+		s1.setDescripcion("asd");
+		s1.setId(1);
+		s1.setNombre("asdasd");
+		 servicios.add(s1);
+		Abono a1= new Abono();
+		a1.setDescuento(45);
+		a1.setDias(14);
+		a1.setId(1);
+		a1.setNombre("ABONO1");
+		
+		
+		
+		Socio p1= new Socio();
 		p1.setApellido("Lopez");
 		p1.setNombre("asd");
 		p1.setDni("37068765");
 		p1.setDomicilio("MT1807");
 		p1.setMail("asd@asd.c");
-		p1.setSueldoBasico(2000);
-		p1.setNroEmpleado(1);
-		p1.setPrecioHs(100);
-		p1.setHoras(10);
+		p1.setAbono(a1);
+		p1.setServicios(servicios);
+		Profesor p2= new Profesor();
+		p2.setApellido("DV");
+		p2.setDni("11111111");
+		p2.setDomicilio("calle falsa 1");
+		p2.setHoras(12);
+		p2.setMail("asd");
+		p2.setNombre("Julio");
+		p2.setNroEmpleado(1);
+		p2.setPrecioHs(100);
+		p2.setSueldoBasico(1000);
+		Administrativo p3= new Administrativo();
+		p3.setApellido("qwe");
+		p3.setDni("456789");
+		p3.setDomicilio("asdasdasdasd");
+		p3.setMail("asdasdsad");
+		p3.setNombre("forro");
+		p3.setNroEmpleado(2);
+		p3.setPresentismo(10);
+		p3.setSueldoBasico(3000);
+		
+		//p1.setSueldoBasico(2000);
+		//p1.setNroEmpleado(1);
+		//p1.setPrecioHs(100);
+		//p1.setHoras(10);
+		
 		personas.addPersona(p1);
-		grabarPersonas(personas);*/
-		ListAbonos abonos = new ListAbonos();
+		personas.addPersona(p2);
+		personas.addPersona(p3);
+		grabarAbonos(a1);
+		grabarPersonas(personas);
+		//grabarAbonos(a1);
+		/*ListAbonos abonos = new ListAbonos();
 		Abono a = new Abono();
 		a.setDias(7);
 		a.setNombre("semanal");
@@ -46,12 +94,12 @@ public class sistema {
 		a.setDescuento(10);
 		abonos.addAbono(a);
 		
-		grabarAbonos(abonos);
+		grabarAbonos(abonos);*/
 		
 	
 	}
 	
-	public static void grabarAbonos(ListAbonos list) throws RemoteException{
+	public static void grabarAbonos(Abono list) throws RemoteException{
 		new AbonoSRV().grabarAbonos(list);
 	}
 	public static void grabarPersonas(ListPersonas list) throws RemoteException{
