@@ -28,7 +28,7 @@ import javax.persistence.Table;
 public class Socio extends Persona implements Serializable{
 	private static final long serialVersionUID = 1L;
 	//@OneToMany (cascade=CascadeType.ALL, fetch= FetchType.EAGER)
-	@OneToMany (cascade=CascadeType.ALL, fetch= FetchType.EAGER)
+	@ManyToMany (cascade=CascadeType.ALL, fetch= FetchType.EAGER)
 	//@JoinColumn(name="Codigo")
 	private List<Servicio> servicios = new ArrayList<Servicio>();
 	@ManyToOne

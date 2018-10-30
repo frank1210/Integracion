@@ -33,4 +33,5 @@ public interface TDAgimnasio extends Remote{
 	public Factura facturar(Socio socio, int i) throws RemoteException;
 	public List<Factura> getFacturas() throws RemoteException;
 	public void grabarRecibos(ListRecibos list) throws RemoteException;
+	public void grabarServicios(List<Servicio> list) throws RemoteException;
 }

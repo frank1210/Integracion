@@ -1,10 +1,16 @@
 package bean;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
+
+import org.hibernate.annotations.Cascade;
 
 @Entity
 @Table(name="RecibosSueldo")
@@ -12,9 +18,12 @@ import javax.persistence.Table;
 public class ReciboDeSueldo {
 	@Id
 	private int numero;
-	@ManyToOne
+	//@ManyToOne
+	//@ManyToOne(cascade = CascadeType.ALL )
 	//@PrimaryKeyJoinColumn
-	@JoinColumn(name="Empleado")
+	//@JoinColumn(name="Empleado")
+	@OneToOne
+	@JoinColumn(name="EmpleadoID")
 	private Empleado empleado;
 	
 	private double monto;
@@ -26,7 +35,6 @@ public class ReciboDeSueldo {
 	public void setNumero(int numero) {
 		this.numero = numero;
 	}
-	
 	public Empleado getEmpleado() {
 		return empleado;
 	}

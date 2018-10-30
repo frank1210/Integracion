@@ -8,7 +8,7 @@ import javax.persistence.InheritanceType;
 import javax.persistence.MappedSuperclass;
 import javax.persistence.Table;
 
-@MappedSuperclass
+@Entity
 @Table(name="Persona")
 @Inheritance(strategy = InheritanceType.JOINED)
 
@@ -22,7 +22,7 @@ public class Persona {
 	private String mail;
 	@Column (name = "Apellido", nullable = false, length = 20)
 	private String Apellido;
-	@Column (name = "Domicilio", nullable = false, length = 50)
+	@Column (name = "Domicilio", /*nullable = false,*/ length = 50)
 	private String Domicilio;
 	
 	public String getNombre() {
